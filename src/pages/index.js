@@ -14,7 +14,7 @@ export default function IndexPage ({data}) {
       </div>
       <h1>{frontmatter.job}</h1>
       <div class="contact-info">
-        <span class="email-val"><a href="/">{frontmatter.email}</a></span>
+        <span class="email-val"><a href={"mailto:" + frontmatter.email}>{frontmatter.email}</a></span>
         <p>{frontmatter.location}</p>
       </div>
       <div
