@@ -1,22 +1,41 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import "../styles/styles.scss"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+export default function IndexPage ({data}) {
+  const { markdownRemark } = data
+  const { frontmatter, html } = markdownRemark
+  return <div class="container">
+    <div class="header">
+      <div class="full-name">
+        <span class="first-name">{frontmatter.first}</span>
+        <span class="last-name">{frontmatter.last}</span>
+      </div>
+      <h1>{frontmatter.job}</h1>
+      <div class="contact-info">
+        <span class="email-val"><a href="/">{frontmatter.email}</a></span>
+        <p>{frontmatter.location}</p>
+      </div>
+      <div
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+   
+  </div>
+}
 
-export default IndexPage
+export const pageQuery = graphql`
+  query{
+    markdownRemark(frontmatter: {slug: {eq: "/resume"}}) {
+      frontmatter {
+        first
+        last
+        job
+        location
+        email
+      }
+      html
+    }
+  }
+`
