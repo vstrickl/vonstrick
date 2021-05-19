@@ -7,19 +7,19 @@ theme = "pico"
 [menu]
 
 [[menu.main]]
-identifier = "home" # identifier is use for translations
+name = "Home"
 pre = "" # pre is inserted before the translation (icons, image, etc)
 url = "/" 
 weight = 10 
 
 [[menu.main]]
-identifier = "projects" # identifier is use for translations
+name = "Projects"
 pre = "" # pre is inserted before the translation (icons, image, etc)
 url = "/projects/" 
 weight = 20 
 
 [[menu.main]]
-identifier = "contact" # identifier is use for translations
+name = "Contact" 
 pre = "" # pre is inserted before the translation (icons, image, etc)
 url = "/#contact" 
 weight = 30 
@@ -37,3 +37,7 @@ blank = true
 icon = "/icons/github.svg"
 name = "github"
 url = "https://github.com/vstrickl"
+
+[taxonomies]
+category = "categories"
+tag = "tags"
