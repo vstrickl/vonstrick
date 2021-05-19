@@ -1,0 +1,39 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Vonique Stricklen"
+theme = "pico"
+
+# Navigation bar
+[menu]
+
+[[menu.main]]
+identifier = "home" # identifier is use for translations
+pre = "" # pre is inserted before the translation (icons, image, etc)
+url = "/" 
+weight = 10 
+
+[[menu.main]]
+identifier = "projects" # identifier is use for translations
+pre = "" # pre is inserted before the translation (icons, image, etc)
+url = "/projects/" 
+weight = 20 
+
+[[menu.main]]
+identifier = "contact" # identifier is use for translations
+pre = "" # pre is inserted before the translation (icons, image, etc)
+url = "/#contact" 
+weight = 30 
+
+# Social parameters for contact_icons widget
+[[params.social]]
+alt = "email icon"
+icon = "/icons/email.svg"
+name = "email"
+url = "mailto:vstrickl.git@gmail.com"
+
+[[params.social]]
+alt = "github icon"
+blank = true
+icon = "/icons/github.svg"
+name = "github"
+url = "https://github.com/vstrickl"
