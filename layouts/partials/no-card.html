@@ -1,0 +1,13 @@
+<div class="mb-4 overflow-hidden">
+	<a href="{{ .Permalink }}" class="no-underline block">
+			<span class="block">
+				{{ if .icon }}
+				<img class="img-fluid" src="{{ .icon | relURL }}" alt="{{ .name | markdownify }}">
+				{{ end }}
+				</div>
+				<div class="px-4 mt-3 mb-3">
+					<h2 class="m-0 inline-block overflow-ellipsis">{{ .name | markdownify }}</h2>
+				</div>
+			</span>
+		</a>
+</div>
