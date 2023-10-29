@@ -1,20 +1,22 @@
 from django.shortcuts import render
 
-from .models import NavMenu, Summary, SocialMenu, PageStyle
+from .models import PageStyle, NavMenu, SocialMediaItem, Summary, Experience
 
 # Create your views here.
 def resume(request):
 
-    nav = NavMenu.objects.all()
-    summary = Summary.objects.get(pk=1)
-    social = SocialMenu.objects.all()
     theme = PageStyle.objects.get(pk=1)
+    nav = NavMenu.objects.all()
+    social = SocialMediaItem.objects.all()
+    summary = Summary.objects.get(pk=1)
+    experience = Experience.objects.all()
 
     context = {
-        'nav':nav,
-        's':summary,
-        'social':social, 
         'f':theme, 
+        'nav':nav,
+        'social':social, 
+        's':summary,
+        'experience':experience
         }
     
     return render(request, 'resume.html', context)

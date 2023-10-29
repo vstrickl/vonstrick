@@ -28,7 +28,6 @@ class NavMenu(models.Model):
         return self.title
     
 class Summary(models.Model):
-    intro = models.CharField(max_length=200,null=True, blank=True)
     image = models.ImageField(upload_to='images/', null=True, blank=True)
     location = models.CharField(max_length=200, null=True, blank=True)
     objective = models.TextField(null=True, blank=True)
@@ -36,7 +35,33 @@ class Summary(models.Model):
     def __str__(self):
         return self.intro
     
-class SocialMenu(models.Model):
+class Company(models.Model):
+    name = models.CharField(max_length=200, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+    
+class Achievement(models.Model):
+    date = models.CharField(max_length=200,null=True, blank=True)
+    company = models.ManyToManyField(Company, blank=True, related_name='achievements') 
+    details = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        if self.company.exists():
+            return f"{self.date} - {self.company.first().name}"
+        else:
+            return self.date
+    
+class Experience(models.Model):
+    time_frame = models.CharField(max_length=200,null=True, blank=True)
+    company = models.ManyToManyField(Company, blank=True, related_name='hired_companies') 
+    job_title = models.CharField(max_length=200, null=True, blank=True)
+    achievements = models.ManyToManyField(Achievement, blank=True, related_name='accomplishments') 
+
+    def __str__(self):
+        return self.time_frame
+    
+class SocialMediaItem(models.Model):
     social = models.CharField(max_length=200, null=True, blank=True)
     font_awesome = models.CharField(max_length=200, null=True, blank=True)
     url = models.URLField(max_length=200, null=True, blank=True)

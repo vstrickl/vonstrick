@@ -1,10 +1,16 @@
 from django.contrib import admin
 
-from .models import FontFamily, PageStyle, NavMenu, Summary, SocialMenu
+from .models import FontFamily, PageStyle, NavMenu, Summary, SocialMediaItem, Achievement, Experience, Company
 
 # Register your models here.
 admin.site.register(Summary)
-admin.site.register(SocialMenu)
+admin.site.register(SocialMediaItem)
+
+class CompanyAdmin(admin.ModelAdmin):
+
+    search_fields = ['name']
+
+admin.site.register(Company, CompanyAdmin)
 
 class FontFamilyAdmin(admin.ModelAdmin):
 
@@ -23,3 +29,24 @@ class NavMenuAdmin(admin.ModelAdmin):
     list_display = ("title", "url")
 
 admin.site.register(NavMenu, NavMenuAdmin)
+
+class ExperienceAdmin(admin.ModelAdmin):
+
+    autocomplete_fields = ['company','achievements']
+    list_display = ("time_frame", "display_companies", "job_title")
+
+    def display_companies(self, obj):
+        return ", ".join([company.name for company in obj.company.all()])
+
+admin.site.register(Experience, ExperienceAdmin)
+
+class AchievementAdmin(admin.ModelAdmin):
+
+    autocomplete_fields = ['company']
+    search_fields = ['date','company']
+    list_display = ("date", "display_companies")
+
+    def display_companies(self, obj):
+        return ", ".join([company.name for company in obj.company.all()])
+
+admin.site.register(Achievement, AchievementAdmin)

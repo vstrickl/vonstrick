@@ -9,7 +9,7 @@
 
 </head>
 
-<body class="">
+<body style="font-family: {% for h in f.font.all %}'{{ h.family_name }}', {{ h.serif_type }}{% endfor %};font-size: {{ f.font_size }};">
 
     <div class="d-flex flex-column h-100">
         <div class="h-100">
@@ -17,6 +17,8 @@
         {% block navbar %}
             {% include 'layout/navbar.html'%}
         {% endblock %}
+
+        <div class="ps-3x pe-1x">
 
         {% block summary %}
             {% include 'layout/objective.html'%}
@@ -33,6 +35,8 @@
         {% block skills %}
             {% include 'layout/skills.html'%}
         {% endblock %}
+
+        </div>
 
         {% block footer %}
             {% include 'layout/social-menu.html'%}
