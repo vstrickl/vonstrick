@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    {% block header %} 
+        {% include 'layout/header.html'%} 
+    {% endblock %}
+
+</head>
+
+<body class="">
+
+    <div class="d-flex flex-column h-100">
+        <div class="h-100">
+
+        {% block navbar %}
+            {% include 'layout/navbar.html'%}
+        {% endblock %}
+
+        {% block summary %}
+            {% include 'layout/objective.html'%}
+        {% endblock %}
+
+        {% block body %}
+            {% include 'layout/experience.html'%}
+        {% endblock %}
+
+        {% block acheivements %}
+            {% include 'layout/achievements.html'%}
+        {% endblock %}
+
+        {% block skills %}
+            {% include 'layout/skills.html'%}
+        {% endblock %}
+
+        {% block footer %}
+            {% include 'layout/social-menu.html'%}
+        {% endblock %}
+
+        <!-- Vendor JS -->
+        {% block venderJs %}
+            {% include 'layout/venders.html'%}
+        {% endblock %}
+
+        </div>
+    </div>
+
+</body>
+</html>
