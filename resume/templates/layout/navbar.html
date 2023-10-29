@@ -1,12 +1,14 @@
 {% load static %}
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-light mb-5">
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+<div class="d-flex justify-content-center bg-light mb-5">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
 
-            {% for nav in nav %}
-            <a class="nav-item nav-link" href="{{ nav.url }}">{{ nav.title }}</a>
-            {% endfor %}
+                {% for nav in nav %}
+                <a class="nav-item nav-link text-dark" href="{{ nav.url }}">{{ nav.title }}</a>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+</div>

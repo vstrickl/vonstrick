@@ -1,0 +1,17 @@
+.bg-cover {
+    /* Make the background image cover the entire div */
+    background-size: cover;
+}
+
+.bg-no-repeat {
+    /* Prevent the background image from repeating */
+    background-repeat: no-repeat;
+}
+
+.mt-2x {
+    margin-top: 20%!important;
+}
+
+.mb-2x {
+    margin-bottom: 20%!important;
+}
