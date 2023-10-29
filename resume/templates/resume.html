@@ -36,11 +36,19 @@
             {% include 'layout/skills.html'%}
         {% endblock %}
 
+        {% block references %}
+            {% include 'layout/references.html'%}
+        {% endblock %}
+
         </div>
+
+        <div class="mx-2x">
 
         {% block footer %}
             {% include 'layout/social-menu.html'%}
         {% endblock %}
+
+        </div>
 
         <!-- Vendor JS -->
         {% block venderJs %}

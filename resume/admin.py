@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import FontFamily, PageStyle, NavMenu, Summary, SocialMediaItem, Achievement, Experience, Company
+from .models import FontFamily, PageStyle, NavMenu, Summary, SocialMediaItem, Achievement, Experience, Company, Skill, SkillGroup
 
 # Register your models here.
 admin.site.register(Summary)
@@ -50,3 +50,15 @@ class AchievementAdmin(admin.ModelAdmin):
         return ", ".join([company.name for company in obj.company.all()])
 
 admin.site.register(Achievement, AchievementAdmin)
+
+class SkillAdmin(admin.ModelAdmin):
+
+    search_fields = ['type']
+
+admin.site.register(Skill, SkillAdmin)
+
+class SkillGroupAdmin(admin.ModelAdmin):
+
+    autocomplete_fields = ['skills']
+
+admin.site.register(SkillGroup, SkillGroupAdmin)

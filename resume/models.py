@@ -64,7 +64,20 @@ class Experience(models.Model):
 class SocialMediaItem(models.Model):
     social = models.CharField(max_length=200, null=True, blank=True)
     font_awesome = models.CharField(max_length=200, null=True, blank=True)
-    url = models.URLField(max_length=200, null=True, blank=True)
+    url = models.CharField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.social
+    
+class Skill(models.Model):
+    type = models.CharField(max_length=200, null=True, blank=True)
+
+    def __str__(self):
+        return self.type
+
+class SkillGroup(models.Model):
+    name = models.CharField(max_length=200, null=True, blank=True)
+    skills = models.ManyToManyField(Skill, blank=True, related_name='skills')
+
+    def __str__(self):
+        return self.name

@@ -1,6 +1,13 @@
 <!-- Footer -->
-<div class="d-flex flex-wrap gap-2 justify-content-center align-items-center">
-    {% for s in social %}
-    <a href="{{ s.url }}" class="px-3 text-decoration-none"><i class="{{ s.font_awesome }} d-flex" style="color: #ffffff; font-size: 4rem;"></i></i></a>
-    {% endfor %}
-</div>
+<footer class="py-5">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <p class="align-middle" style="color: #4e4e4e; margin-bottom: 0!important;">Handcrafted by Vonique Stricklen</p>
+        </div>
+        <div class="d-flex flex-wrap gap-2 align-items-center">
+            {% for s in social %}
+            <a href="{{ s.url }}" class="px-3 text-decoration-none"><i class="{{ s.font_awesome }} d-flex" style="color: #999; font-size: inherit;"></i></i></a>
+            {% endfor %}
+        </div>
+    </div>
+</footer>

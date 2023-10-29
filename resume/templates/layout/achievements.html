@@ -1,0 +1,10 @@
+	<!-- Award & Achievements -->
+	<div class="col-6 mb-5" id="achievements">
+        <h1 style="font-family: {% for h in f.header_font.all %}'{{ h.family_name }}', {{ h.serif_type }}{% endfor %};font-size: {{ f.header_font_size }};font-weight: {{ f.header_font_weight }};">Achievements &amp;<br>Contributions</h1>
+        {% for a in achievement %}
+        <ul class="list-unstyled">
+            <li style="font-size: 0.9375em;color: #8c8c8c;">{{ a.date }}</li>
+            <li>{{ a.details }}</li>
+        </ul>
+        {% endfor %}
+	</div>
