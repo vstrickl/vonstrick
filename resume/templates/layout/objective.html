@@ -1,12 +1,12 @@
 <!-- Introduction -->
 <div class="mb-5" id="summary">
-    <p style="color: #8c8c8c;">{{ s.location }}</p>
+    <p class="ldt">{{ s.desired_job }}</p>
     <div class="row mb-3">
         <div class="col-3 d-flex justify-content-center align-items-center">
             <img src="{{ s.image.url }}" alt="Avatar" width="50%" height="50%" class="rounded-circle img-fluid">
         </div>
         <div class="col-9">
-            <h1 style="font-family: {% for h in f.header_font.all %}'{{ h.family_name }}', {{ h.serif_type }}{% endfor %};font-size: {{ f.header_font_size }};font-weight: {{ f.header_font_weight }};">My Name is<br><span style="font-size: 2.5rem;">Vonique Stricklen</span></h1>
+            <h1 class="text-uppercase">I live in<br><span class="location">{{ s.location }}</span></h1>
         </div>
     </div>
     <div class="row">

@@ -1,16 +1,16 @@
 <!-- Work Experience -->
 <div class="mb-5" id="experience">
-    <h1 style="font-family: {% for h in f.header_font.all %}'{{ h.family_name }}', {{ h.serif_type }}{% endfor %};font-size: {{ f.header_font_size }};font-weight: {{ f.header_font_weight }};">Experience</h1>
+    <h1>Experience</h1>
     <ul class="list-unstyled">
         {% for e in experience %}
         <div class="mb-3">
-            <li style="font-size: 0.9375em;color: #8c8c8c;">{{ e.time_frame }}</li>
-            <li style="font-weight: 700">
+            <li class="ldt">{{ e.time_frame }}</li>
+            <li class="company">
                 {% for c in e.company.all %}
                     {{ c.name }}
                 {% endfor %}
             </li>
-            <li style="font-size: 0.9375em; color: #8c8c8c;">{{ e.job_title }}</li>
+            <li class="ldt">{{ e.job_title }}</li>
         </div>
         {% endfor %}
     </ul>

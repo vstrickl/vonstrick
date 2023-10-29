@@ -7,9 +7,77 @@
         {% include 'layout/header.html'%} 
     {% endblock %}
 
+    <style>
+
+        a, p, li {
+            color: #4e4e4e;
+        }
+
+        a, p, li {
+            font-family: {% for h in f.font.all %}'{{ h.family_name }}', {{ h.serif_type }}{% endfor %};
+        }
+
+        a, p, li {
+            font-size: {{ f.font_size }};
+        }
+
+        i {
+            color: #999;
+        }
+
+        i {
+            font-size: inherit;
+        }
+
+        h1 {
+            font-family: {% for h in f.header_font.all %}'{{ h.family_name }}', {{ h.serif_type }}{% endfor %};
+        }
+
+        h1 {
+            font-size: {{ f.header_font_size }};
+        }
+
+        h1 {
+            font-weight: {{ f.header_font_weight }};
+        }
+
+        footer p {
+            color: #4e4e4e;
+        }
+
+        footer p {
+            margin-bottom: 0!important;
+        }
+
+        .nav-link {
+            color: #a7a7a7;
+        }
+
+        .nav-link:active {
+            color: #4d4d4d;
+        }
+
+        .ldt {
+            color: #8c8c8c;
+        }
+
+        .ldt {
+            font-size: 0.9375em;
+        }
+
+        .name {
+            font-size: 2.5rem;
+        }
+
+        .company {
+            font-weight: 700
+        }
+
+    </style>
+
 </head>
 
-<body style="font-family: {% for h in f.font.all %}'{{ h.family_name }}', {{ h.serif_type }}{% endfor %};font-size: {{ f.font_size }};">
+<body>
 
     <div class="d-flex flex-column h-100">
         <div class="h-100">
@@ -45,7 +113,7 @@
         <div class="mx-2x">
 
         {% block footer %}
-            {% include 'layout/social-menu.html'%}
+            {% include 'layout/footer.html'%}
         {% endblock %}
 
         </div>

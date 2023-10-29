@@ -10,6 +10,7 @@ class FontFamily(models.Model):
     
 class PageStyle(models.Model):
     template_name = models.CharField(max_length=200,null=True, blank=True)
+    template_url = models.URLField(max_length=200, null=True, blank=True)
     header_font = models.ManyToManyField(FontFamily, blank=True, related_name='headers')  
     header_font_size = models.CharField(max_length=200, null=True, blank=True)
     header_font_weight = models.CharField(max_length=200, null=True, blank=True)
@@ -29,11 +30,12 @@ class NavMenu(models.Model):
     
 class Summary(models.Model):
     image = models.ImageField(upload_to='images/', null=True, blank=True)
+    desired_job = models.CharField(max_length=200, null=True, blank=True)
     location = models.CharField(max_length=200, null=True, blank=True)
     objective = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return self.intro
+        return self.desired_job
     
 class Company(models.Model):
     name = models.CharField(max_length=200, null=True, blank=True)

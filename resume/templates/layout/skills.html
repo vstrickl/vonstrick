@@ -1,9 +1,9 @@
 <!-- Technical Skills -->
 <div class="mb-5" id="skills">
-    <h1 style="font-family: {% for h in f.header_font.all %}'{{ h.family_name }}', {{ h.serif_type }}{% endfor %};font-size: {{ f.header_font_size }};font-weight: {{ f.header_font_weight }};">Skills</h1>
+    <h1>Skills</h1>
     {% for s in skills %}
     <ul class="list-unstyled">
-        <li style="font-size: 0.9375em;color: #8c8c8c;">{{ s.name }}</li>
+        <li class="ldt">{{ s.name }}</li>
         <li>{% for t in s.skills.all %}{{ t.type }}{% if not forloop.last %} / {% endif %} {% endfor %}</li>
     </ul>
     {% endfor %}
