@@ -1,0 +1,12 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-light mb-5">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+
+            {% for nav in nav %}
+            <a class="nav-item nav-link" href="{{ nav.url }}">{{ nav.title }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</nav>
