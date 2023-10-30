@@ -49,12 +49,12 @@
             margin-bottom: 0!important;
         }
 
-        .nav-link {
-            color: #a7a7a7;
+        .active, a:hover {
+            color: #4d4d4d;
         }
 
-        .nav-link:active {
-            color: #4d4d4d;
+        .nl {
+            color: #a7a7a7;
         }
 
         .ldt {
@@ -62,7 +62,7 @@
         }
 
         .ldt {
-            font-size: 0.9375em;
+            font-size: 1.5rem;
         }
 
         .name {
@@ -77,16 +77,13 @@
 
 </head>
 
-<body>
+<body class="vh-100">
 
-    <div class="d-flex flex-column h-100">
-        <div class="h-100">
+    <div class="h-100">
 
         {% block navbar %}
             {% include 'layout/navbar.html'%}
         {% endblock %}
-
-        <div class="ps-3x pe-1x">
 
         {% block summary %}
             {% include 'layout/objective.html'%}
@@ -108,8 +105,6 @@
             {% include 'layout/references.html'%}
         {% endblock %}
 
-        </div>
-
         <div class="mx-2x">
 
         {% block footer %}
@@ -123,7 +118,6 @@
             {% include 'layout/venders.html'%}
         {% endblock %}
 
-        </div>
     </div>
 
 </body>
