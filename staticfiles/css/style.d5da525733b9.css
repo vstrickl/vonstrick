@@ -56,26 +56,16 @@ footer p {
 }
 
 @media (min-width: 992px) {
-    
-    .fs-lg-1rem {
-        font-size: 1.15rem!important;
+    .ps-lg-3x {
+        padding-left: 28%!important;
     }
 
     .fs-lg-2rem {
         font-size: 1.5rem!important;
     }
-
-    .ps-lg-3x {
-        padding-left: 28%!important;
-    }
 }
 
 @media (max-width: 991.5px) {
-
-    .fs-md-1pt5rem {
-        font-size: 1.5rem!important;
-    }
-
     .fs-md-1rem {
         font-size: 1.75rem!important;
     }
@@ -83,5 +73,4 @@ footer p {
     .fs-md-2rem {
         font-size: 2.25rem!important;
     }
-    
 }

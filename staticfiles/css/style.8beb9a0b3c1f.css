@@ -72,10 +72,6 @@ footer p {
 
 @media (max-width: 991.5px) {
 
-    .fs-md-1pt5rem {
-        font-size: 1.5rem!important;
-    }
-
     .fs-md-1rem {
         font-size: 1.75rem!important;
     }

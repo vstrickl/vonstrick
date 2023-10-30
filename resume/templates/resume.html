@@ -9,6 +9,10 @@
 
     <style>
 
+        i {
+            color: #999;
+        }
+
         a, p, li {
             color: #4e4e4e;
         }
@@ -17,24 +21,8 @@
             font-family: {% for h in f.font.all %}'{{ h.family_name }}', {{ h.serif_type }}{% endfor %};
         }
 
-        a, p, li {
-            font-size: {{ f.font_size }};
-        }
-
-        i {
-            color: #999;
-        }
-
-        i {
-            font-size: inherit;
-        }
-
         h1 {
             font-family: {% for h in f.header_font.all %}'{{ h.family_name }}', {{ h.serif_type }}{% endfor %};
-        }
-
-        h1 {
-            font-size: {{ f.header_font_size }};
         }
 
         h1 {
@@ -43,10 +31,6 @@
 
         footer p {
             color: #4e4e4e;
-        }
-
-        footer p {
-            margin-bottom: 0!important;
         }
 
         .active, a:hover {
@@ -59,18 +43,6 @@
 
         .ldt {
             color: #8c8c8c;
-        }
-
-        .ldt {
-            font-size: 1.5rem;
-        }
-
-        .name {
-            font-size: 2.5rem;
-        }
-
-        .company {
-            font-weight: 700
         }
 
     </style>

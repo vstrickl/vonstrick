@@ -15,8 +15,6 @@ class PageStyle(models.Model):
     header_font_size = models.CharField(max_length=200, null=True, blank=True)
     header_font_weight = models.CharField(max_length=200, null=True, blank=True)
     font = models.ManyToManyField(FontFamily, blank=True, related_name='general')  
-    font_size = models.CharField(max_length=200, null=True, blank=True)
-    font_weight = models.CharField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.template_name

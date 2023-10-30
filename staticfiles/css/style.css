@@ -1,3 +1,16 @@
+i {
+    font-size: inherit;
+}
+
+h1 {
+    font-size: 3.25rem;
+}
+
+
+footer p {
+    margin-bottom: 0!important;
+}
+
 .bg-cover {
     /* Make the background image cover the entire div */
     background-size: cover;
@@ -27,4 +40,48 @@
 
 .ps-3x {
     padding-left: 30%!important;
+}
+
+.py-1x {
+    padding-right: 15%!important;
+    padding-left: 15%!important;
+}
+
+.name {
+    font-size: 2.5rem;
+}
+
+.company {
+    font-weight: 700
+}
+
+@media (min-width: 992px) {
+    
+    .fs-lg-1rem {
+        font-size: 1.15rem!important;
+    }
+
+    .fs-lg-2rem {
+        font-size: 1.5rem!important;
+    }
+
+    .ps-lg-3x {
+        padding-left: 28%!important;
+    }
+}
+
+@media (max-width: 991.5px) {
+
+    .fs-md-1pt5rem {
+        font-size: 1.5rem!important;
+    }
+
+    .fs-md-1rem {
+        font-size: 1.75rem!important;
+    }
+
+    .fs-md-2rem {
+        font-size: 2.25rem!important;
+    }
+    
 }
