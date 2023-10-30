@@ -141,4 +141,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # CSRF Tokens
 # https://docs.djangoproject.com/en/4.2/howto/csrf/
 
-CSRF_TRUSTED_ORIGINS = ['https://vonstrick.com','http://127.0.0.1:8000']
+CSRF_TRUSTED_ORIGINS = ['https://vonstrick.com','http://127.0.0.1:8000', 'https://vonstrick-production.up.railway.app']
