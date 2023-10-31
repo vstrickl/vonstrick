@@ -1,6 +1,6 @@
 <!-- Navbar -->
-<div class="d-flex justify-content-center bg-light mb-5 p-4">
-    <a class="fs-md-1pt5rem text-uppercase text-decoration-none" href="/">Vonique Stricklen</a>
+<div class="d-flex justify-content-center bg-light mb-5 p-4" id="desktop-menu">
+    <a class="fs-md-1pt5rem text-uppercase text-decoration-none" href="/">{{ title }}</a>
     {% for nav in nav %}
     <a class="fs-md-1pt5rem text-uppercase nl text-decoration-none ms-3" href="{{ nav.url }}">{{ nav.title }}</a>
     {% endfor %}

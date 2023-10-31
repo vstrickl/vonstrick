@@ -34,25 +34,12 @@ footer p {
     margin-right: 20%!important;
 }
 
-.pt-1x {
-    padding-top: 10%;
-}
-
 .pe-1x {
     padding-right: 15%!important;
 }
 
-.px-1x {
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
 .ps-3x {
     padding-left: 30%!important;
-}
-
-.pt-3x {
-    padding-top: 30%; 
 }
 
 .py-1x {

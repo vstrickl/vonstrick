@@ -5,6 +5,8 @@ from .models import PageStyle, NavMenu, SocialMediaItem, Summary, Experience, Ac
 # Create your views here.
 def resume(request):
 
+    title = 'Vonique Stricklen'
+
     theme = PageStyle.objects.get(pk=1)
     summary = Summary.objects.get(pk=1)
     nav = NavMenu.objects.all()
@@ -16,8 +18,9 @@ def resume(request):
     context = {
         'f':theme, 
         'nav':nav,
-        'social':social, 
+        'title':title,
         's':summary,
+        'social':social, 
         'experience':experience,
         'achievement':achievement,
         'skills':skills,
