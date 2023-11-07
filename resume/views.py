@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.conf import settings
 
 from .models import PageStyle, NavMenu, SocialMediaItem, Summary, Experience, Achievement, SkillGroup
 
@@ -15,15 +16,20 @@ def resume(request):
     achievement = Achievement.objects.all()
     skills = SkillGroup.objects.all()
 
+    google_tag_url = settings.MEASUREMENT_ID
+    measurement_id = settings.GOOGLE_TAG_URL
+
     context = {
         'f':theme, 
         'nav':nav,
-        'title':title,
         's':summary,
+        'title':title,
+        'skills':skills,
         'social':social, 
         'experience':experience,
         'achievement':achievement,
-        'skills':skills,
+        'google_tag_url':google_tag_url,
+        'measurement_id':measurement_id, 
         }
     
     return render(request, 'resume.html', context)
