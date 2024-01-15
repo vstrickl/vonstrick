@@ -171,7 +171,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = ['https://vonstrick.com','http://127.0.0.1:8000']
 
-# Google Analytics
+# Cookies
 
-MEASUREMENT_ID = config('MEASUREMENT_ID')
-GOOGLE_TAG_URL = config('GOOGLE_TAG_URL')
+SESSION_COOKIE_SAMESITE = 'Lax'
+
+CSRF_COOKIE_SAMESITE = 'Lax'

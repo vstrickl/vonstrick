@@ -16,9 +16,6 @@ def resume(request):
     achievement = Achievement.objects.all()
     skills = SkillGroup.objects.all()
 
-    google_tag_url = settings.MEASUREMENT_ID
-    measurement_id = settings.GOOGLE_TAG_URL
-
     context = {
         'f':theme, 
         'nav':nav,
@@ -28,8 +25,6 @@ def resume(request):
         'social':social, 
         'experience':experience,
         'achievement':achievement,
-        'google_tag_url':google_tag_url,
-        'measurement_id':measurement_id, 
         }
     
     return render(request, 'resume.html', context)
