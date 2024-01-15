@@ -4,7 +4,7 @@
 <head>
     
     {% block header %} 
-        {% include 'layout/header.html'%} 
+        {% include 'components/header.html'%} 
     {% endblock %}
 
     <style>
@@ -54,11 +54,11 @@
     <div class="h-100">
 
         {% block navbar %}
-            {% include 'layout/navbar.html'%}
+            {% include 'components/navbar.html'%}
         {% endblock %}
 
         {% block mobile_nav %}
-            {% include 'layout/mobile-menu.html'%}
+            {% include 'components/mobile-menu.html'%}
         {% endblock %}
 
         {% block summary %}
@@ -90,7 +90,7 @@
         </div>
 
         {% block analytics %}
-            {% include 'layout/analytics.html'%}
+            {% include 'components/analytics.html'%}
         {% endblock %}
 
     </div>

@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class FontFamily(models.Model):
@@ -27,7 +28,7 @@ class NavMenu(models.Model):
         return self.title
     
 class Summary(models.Model):
-    image = models.ImageField(upload_to='images/', null=True, blank=True)
+    image = CloudinaryField('image', null=True, blank=True)
     desired_job = models.CharField(max_length=200, null=True, blank=True)
     location = models.CharField(max_length=200, null=True, blank=True)
     objective = models.TextField(null=True, blank=True)

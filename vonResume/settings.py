@@ -120,18 +120,46 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
+
+MY_PROJECT_STATIC_FILES = os.path.join(BASE_DIR, 'static')
+
+# URL to use when referring to static files located in STATIC_ROOT.
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# The absolute path to the directory where collectstatic will collect static files for deployment.
+# https://docs.djangoproject.com/en/4.2/howto/static-files/#deployment
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+# List of all static file directory locations
+# https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-STATICFILES_DIRS
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATICFILES_DIRS = [
+    MY_PROJECT_STATIC_FILES
+]
+
+# Compression and Caching support for static files
+# https://whitenoise.readthedocs.io/en/stable/django.html#add-compression-and-caching-support
+
+STORAGES = {
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    },
+}
+
+# Cloudinary Media Sorage
+# https://cloudinary.com/blog/managing-media-files-in-django
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+cloudinary.config( 
+  	cloud_name = config('CLOUD_NAME'),
+  	api_key = config('API_KEY'),
+  	api_secret = config('API_SECRET')
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
